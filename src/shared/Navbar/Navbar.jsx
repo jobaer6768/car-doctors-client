@@ -8,6 +8,7 @@ const Navbar = () => {
             <div className='space-x-4'>
                 <NavLink to='/'>Home</NavLink>
                 <NavLink to='/about'>About</NavLink>
+                <NavLink to='/login'>Login</NavLink>
             </div>
         </>
 
