@@ -4,7 +4,6 @@ import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
 import BookService from "../pages/BookService/BookService";
-import Bookings from "../pages/Booking/Bookings";
 import PrivateRoute from "./PrivateRoute";
 import Booking from "../pages/Booking/Booking";
 
