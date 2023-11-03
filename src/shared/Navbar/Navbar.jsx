@@ -1,15 +1,29 @@
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import logo from '../../assets/logo.svg'
+import { useContext } from 'react';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const Navbar = () => {
 
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut();
+    }
+
     const navLinks =
         <>
-            <div className='space-x-4'>
+            <div className='flex items-center space-x-4'>
                 <NavLink to='/'>Home</NavLink>
-                <NavLink to='/about'>About</NavLink>
-                <NavLink to='/booking'>Booking</NavLink>
-                <NavLink to='/login'>Login</NavLink>
+
+                {user?.email ?
+                    <>
+                        <NavLink to='/booking'>Booking</NavLink>
+                        <li><button onClick={handleLogOut}>Log out</button></li>
+                    </>
+
+                    : <li> <NavLink to="/login">Login</NavLink> </li>
+                }
             </div>
         </>
 
